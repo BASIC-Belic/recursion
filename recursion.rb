@@ -71,3 +71,14 @@ end
 def binary_search(find_me, list)
   return recursive_binary_search(find_me, 0, list.length-1, list)
 end
+
+# 
+# #worst recursion
+# #2^n
+# def fib(n)
+#   if n == 0 || n == 1
+#     return 1
+#   else
+#     fib(n-1) + fib(n-2)
+#   end
+# end
