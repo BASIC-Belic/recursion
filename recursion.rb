@@ -35,44 +35,26 @@ def recursive_binary_search(find_me, start, last, list)
   end
 end
 
-def recursive_binary_search(find_me, start, last, list)
-  mid = list.length / 2
-
-  if mid == list.length - 1 || mid == 0
-    return -1
-  elsif list[mid] == find_me
-    return mid
-  elsif list[start] == find_me
-    return start
-  elsif list[last] == find_me
-    return last
-  else
-    if list[mid] < find_me
-      recursive_binary_search(find_me, 0, mid - 1, list[start...last])
-    else
-      recursive_binary_search(find_me, mid + 1, list.length - 1, list[start...last])
-    end
-  end
-
-  #chris solution
-  # return - 1 if start < last
-  # mid = (start + last) / 2
-  # if list[mid] == find_me
-  #   return mid
-  # elsif list[mid] > find_me
-  #   last = mid + 1
-  # else
-  #   start = mid + 1
-  # end
-  #
-  # return recursive_binary_search(find_me, start, last, list)
-end
+# def recursive_binary_search(find_me, start, last, list)
+#   chris solution
+#   return - 1 if start < last
+#   mid = (start + last) / 2
+#   if list[mid] == find_me
+#     return mid
+#   elsif list[mid] > find_me
+#     last = mid + 1
+#   else
+#     start = mid + 1
+#   end
+#
+#   return recursive_binary_search(find_me, start, last, list)
+# end
 
 def binary_search(find_me, list)
   return recursive_binary_search(find_me, 0, list.length-1, list)
 end
 
-# 
+#
 # #worst recursion
 # #2^n
 # def fib(n)
